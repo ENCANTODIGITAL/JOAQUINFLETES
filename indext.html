@@ -1,164 +1,456 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudanzas y Fletes Joaquín | Lima y Provincias</title>
-    <!-- Enlace a la hoja de estilos externa -->
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome para iconos -->
+    <title>Mudanzas y Fletes Lima y Provincias | Servicio Seguro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                            950: '#090d16'
+                        },
+                        royal: {
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        },
+                        whatsapp: {
+                            500: '#22c55e',
+                            600: '#16a34a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for professional icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-royal-600 selection:text-white">
 
-    <!-- CABECERA Y NAVEGACIÓN -->
-    <header class="header">
-        <div class="logo-container">
-            <i class="fa-solid fa-truck-fast logo-icon"></i>
-            <span class="logo-text">MUDANZAS Y FLETES <strong>JOAQUÍN</strong></span>
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="bg-navy-900 text-white p-2.5 rounded-xl shadow-lg group-hover:bg-royal-600 transition-colors">
+                    <i class="fa-solid fa-truck-fast text-xl"></i>
+                </div>
+                <div>
+                    <span class="block font-extrabold text-navy-900 text-lg leading-tight tracking-tight">MUDANZAS Y FLETES</span>
+                    <span class="block text-xs font-semibold text-royal-600 tracking-wider">LIMA & PROVINCIAS</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-700">
+                <a href="#inicio" class="hover:text-royal-600 transition-colors">Inicio</a>
+                <a href="#nosotros" class="hover:text-royal-600 transition-colors">Nosotros</a>
+                <a href="#servicios" class="hover:text-royal-600 transition-colors">Servicios</a>
+                <a href="#provincias" class="hover:text-royal-600 transition-colors">Provincias</a>
+                <a href="#cotizador" class="hover:text-royal-600 transition-colors">Cotización Rápida</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden sm:block">
+                <a href="https://wa.me/51952258542?text=Hola,%20deseo%20cotizar%20un%20servicio%20de%20mudanza%20o%20flete." target="_blank" rel="noopener noreferrer" class="bg-whatsapp-500 hover:bg-whatsapp-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Cotizar WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden text-slate-700 focus:outline-none p-2 rounded-lg hover:bg-slate-100" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
         </div>
-        <nav class="nav-menu">
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#provincias">Provincias</a>
-        </nav>
-        <a href="https://wa.me/51952258542?text=Hola,%20deseo%20cotizar%20una%20mudanza%20o%20flete" target="_blank" class="btn-header-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> COTIZAR WHATSAPP
-        </a>
+
+        <!-- Mobile dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4 shadow-xl">
+            <div class="flex flex-col gap-4 font-medium text-slate-700">
+                <a href="#inicio" class="mobile-link hover:text-royal-600 py-1">Inicio</a>
+                <a href="#nosotros" class="mobile-link hover:text-royal-600 py-1">Nosotros</a>
+                <a href="#servicios" class="mobile-link hover:text-royal-600 py-1">Servicios</a>
+                <a href="#provincias" class="mobile-link hover:text-royal-600 py-1">Provincias</a>
+                <a href="#cotizador" class="mobile-link hover:text-royal-600 py-1">Cotización Rápida</a>
+                <a href="https://wa.me/51952258542?text=Hola,%20deseo%20cotizar%20un%20servicio%20de%20mudanza%20o%20flete." target="_blank" rel="noopener noreferrer" class="bg-whatsapp-500 text-white font-semibold py-3 rounded-xl text-center flex items-center justify-center gap-2 shadow-md mt-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Cotizar por WhatsApp</span>
+                </a>
+            </div>
+        </div>
     </header>
 
-    <!-- SECCIÓN INICIO / HERO -->
-    <section id="inicio" class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>MUDANZAS Y FLETES JOAQUÍN</h1>
-            <p>Seguros en Lima y Provincias • Puntualidad, cuidado y unidades listas para ti</p>
-            <a href="https://wa.me/51952258542?text=Hola,%20necesito%20una%20cotización%20rápida" target="_blank" class="btn-main-whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> PEDIR COTIZACIÓN VÍA WHATSAPP
-            </a>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 text-white relative">
+        <div class="max-w-5xl mx-auto text-center z-10">
+            <div class="inline-flex items-center gap-2 bg-royal-600/40 border border-royal-600/60 px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                <span>Flota propia y atención 100% personalizada</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                Mudanzas y Fletes Seguros en <span class="text-blue-400 underline decoration-royal-600">Lima y Provincias</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-200 max-w-2xl mx-auto font-light mb-10">
+                Puntualidad, cuidado absoluto de tus pertenencias y unidades listas para ti sin intermediarios.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/51952258542?text=Hola,%20deseo%20cotizar%20una%20mudanza%20urgente." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-whatsapp-500 hover:bg-whatsapp-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 text-lg">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Pedir Cotización Vía WhatsApp</span>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl backdrop-blur-md transition-all text-center">
+                    Ver Nuestros Servicios
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- SECCIÓN QUIÉNES SOMOS -->
-    <section id="nosotros" class="about-section">
-        <h2 class="section-title">¿QUIÉNES SOMOS?</h2>
-        <div class="about-container">
-            <div class="about-image">
-                <div class="team-placeholder">
-                    <i class="fa-solid fa-users"></i>
-                    <span>Mudanzas y Fletes Joaquín (3 Unidades)</span>
+    <!-- Quiénes Somos Section -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-royal-600 uppercase tracking-widest mb-3">¿Quiénes Somos?</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Confianza, Experiencia y Cuidado Directo</h3>
+                <div class="w-20 h-1 bg-royal-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Image representation -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Equipo de mudanzas profesional" class="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Equipo+Profesional'">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-navy-900 text-white p-6 rounded-2xl shadow-xl hidden sm:block border border-slate-700">
+                        <p class="text-3xl font-extrabold text-blue-400">3 Unidades</p>
+                        <p class="text-sm font-medium text-slate-300">Mediana, Mediana-Grande y Grande</p>
+                    </div>
+                </div>
+
+                <!-- Text & Value proposition -->
+                <div class="lg:col-span-6 flex flex-col justify-center">
+                    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                        Somos un equipo especializado en fletes, carga y mudanzas locales y nacionales. A diferencia de las grandes agencias impersonales, aquí <strong class="text-navy-900">tratamos tus pertenencias como si fueran nuestras</strong>.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Operamos con una flota propia compuesta por <strong class="text-navy-900">3 unidades</strong> y un equipo de <strong class="text-navy-900">4 profesionales altamente capacitados</strong>, todos directamente empleados por nosotros. Esto garantiza un trato directo, sin intermediarios y un compromiso total con la puntualidad de puerta a puerta.
+                    </p>
+
+                    <!-- Trust Pillars -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60 text-center">
+                            <div class="text-royal-600 text-2xl mb-2"><i class="fa-solid fa-handshake"></i></div>
+                            <h4 class="font-bold text-navy-900 text-sm">Cero Intermediarios</h4>
+                            <p class="text-xs text-slate-500 mt-1">Trato directo con el equipo.</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60 text-center">
+                            <div class="text-royal-600 text-2xl mb-2"><i class="fa-solid fa-clock"></i></div>
+                            <h4 class="font-bold text-navy-900 text-sm">Puntualidad</h4>
+                            <p class="text-xs text-slate-500 mt-1">Respetamos tus horarios.</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60 text-center">
+                            <div class="text-royal-600 text-2xl mb-2"><i class="fa-solid fa-box-open"></i></div>
+                            <h4 class="font-bold text-navy-900 text-sm">Cuidado Extremo</h4>
+                            <p class="text-xs text-slate-500 mt-1">Manipulación segura de carga.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="about-text">
-                <h3>Sobre Nosotros: Confianza y Cuidado Directo</h3>
-                <p>Somos <strong>Mudanzas y Fletes Joaquín</strong>[cite: 1, 2, 3], un equipo especializado en fletes, carga y mudanzas locales y nacionales. A diferencia de las grandes agencias impersonales, aquí <strong>tratamos tus pertenencias como si fueran nuestras</strong>.</p>
-                <p>Operamos con una flota propia compuesta por <strong>3 unidades</strong> (mediana, mediana-grande y grande) y un equipo de <strong>4 profesionales altamente capacitados</strong>, todos directamente empleados por nosotros. Esto garantiza un trato directo, sin intermediarios, y un compromiso total con la puntualidad y el cuidado de tus objetos de puerta a puerta en Lima y provincias.</p>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-royal-600 uppercase tracking-widest mb-3">Nuestros Servicios</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Soluciones de Transporte a tu Medida</h3>
+                <div class="w-20 h-1 bg-royal-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-blue-50 text-royal-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-royal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <span class="text-xs font-bold text-royal-600 uppercase tracking-wider">Servicio 01</span>
+                        <h4 class="text-xl font-bold text-navy-900 mt-1 mb-3">Mudanzas Locales</h4>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Ideal para departamentos, casas y oficinas dentro de Lima y Callao. Nuestro equipo gestiona el traslado con agilidad y cuidado.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <span class="block text-xs font-bold text-navy-900 mb-1"><i class="fa-solid fa-truck text-royal-600 mr-1.5"></i> Unidad sugerida:</span>
+                        <p class="text-xs text-slate-600">Camión mediano o mediano-grande, perfecto para calles y avenidas.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-blue-50 text-royal-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-royal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <span class="text-xs font-bold text-royal-600 uppercase tracking-wider">Servicio 02</span>
+                        <h4 class="text-xl font-bold text-navy-900 mt-1 mb-3">Fletes a Provincia</h4>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Para traslados de carga pesada, mudanzas completas o envíos hacia el interior del país con garantía de seguridad en carretera.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <span class="block text-xs font-bold text-navy-900 mb-1"><i class="fa-solid fa-truck-ramp-box text-royal-600 mr-1.5"></i> Unidad sugerida:</span>
+                        <p class="text-xs text-slate-600">Camión grande, preparado para viajes largos y optimización de espacio.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-blue-50 text-royal-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-royal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <span class="text-xs font-bold text-royal-600 uppercase tracking-wider">Servicio 03</span>
+                        <h4 class="text-xl font-bold text-navy-900 mt-1 mb-3">Carga General y Fletes</h4>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Soluciones para empresas, tiendas y distribución de mercancía. Trasladamos pallets, muebles y bultos pesados con puntualidad.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <span class="block text-xs font-bold text-navy-900 mb-1"><i class="fa-solid fa-shield-check text-royal-600 mr-1.5"></i> Beneficio:</span>
+                        <p class="text-xs text-slate-600">Cuidado estricto de tu carga comercial de puerta a puerta.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="about-features">
-            <div class="feature-item">
-                <i class="fa-solid fa-shield-halved"></i>
+    </section>
+
+    <!-- Provincias / Envíos Nacionales Section -->
+    <section id="provincias" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy-900 rounded-3xl overflow-hidden shadow-2xl text-white relative">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 p-8 sm:p-12 lg:p-16 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 bg-royal-600/30 text-blue-400 border border-royal-600/50 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>Cobertura Nacional</span>
+                        </div>
+                        <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">
+                            Fletes y Mudanzas a Toda la Costa y Provincias
+                        </h3>
+                        <p class="text-slate-300 text-base sm:text-lg font-light leading-relaxed mb-8">
+                            Traslados seguros en carretera con nuestra unidad grande, optimizada para proteger tu carga de puerta a puerta hacia cualquier destino del Perú.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="bg-royal-600 text-white p-1.5 rounded-lg mt-1"><i class="fa-solid fa-check text-xs"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Rutas Frecuentes en la Costa</h4>
+                                    <p class="text-sm text-slate-300">Viajes constantes hacia Trujillo, Chiclayo, Piura, Lurín y principales ciudades.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-royal-600 text-white p-1.5 rounded-lg mt-1"><i class="fa-solid fa-check text-xs"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white">¿Llegamos más lejos? ¡Sí!</h4>
+                                    <p class="text-sm text-slate-300">Cotizando con anticipación, cubrimos destinos hacia la sierra y la selva peruana.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 flex flex-col items-center justify-center bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md text-center">
+                        <div class="text-royal-600 text-5xl mb-4"><i class="fa-solid fa-truck-monster"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Unidad Grande en Ruta</h4>
+                        <p class="text-slate-300 text-sm mb-6">Listos para viajes largos con monitoreo y máxima seguridad en carretera.</p>
+                        <a href="https://wa.me/51952258542?text=Hola,%20deseo%20cotizar%20un%20viaje%20a%20provincia." target="_blank" rel="noopener noreferrer" class="w-full bg-whatsapp-500 hover:bg-whatsapp-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Cotizar Viaje a Provincia</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cotización Rápida Section -->
+    <section id="cotizador" class="py-20 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold text-royal-600 uppercase tracking-widest mb-3">Cotización Rápida</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Arma tu Mensaje para WhatsApp</h3>
+                <p class="text-slate-600 text-sm mt-2">Ingresa tus datos básicos y te atenderemos al instante en nuestro chat.</p>
+                <div class="w-20 h-1 bg-royal-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200/80">
+                <form id="whatsapp-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="origen" class="block text-sm font-bold text-navy-900 mb-2">¿De dónde salimos? (Origen)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400"><i class="fa-solid fa-location-dot"></i></span>
+                                <input type="text" id="origen" required placeholder="Ej. San Juan de Lurigancho, Lima" class="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-royal-600 focus:bg-white focus:outline-none text-slate-800 text-sm transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="destino" class="block text-sm font-bold text-navy-900 mb-2">¿A dónde vamos? (Destino)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400"><i class="fa-solid fa-map-pin"></i></span>
+                                <input type="text" id="destino" required placeholder="Ej. Trujillo / Miraflores" class="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-royal-600 focus:bg-white focus:outline-none text-slate-800 text-sm transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="tipo-carga" class="block text-sm font-bold text-navy-900 mb-2">Tipo de Carga o Servicio</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400"><i class="fa-solid fa-box"></i></span>
+                                <select id="tipo-carga" class="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-royal-600 focus:bg-white focus:outline-none text-slate-800 text-sm transition-all appearance-none">
+                                    <option value="Mudanza Local (Casa/Depto)">Mudanza Local (Casa o Departamento)</option>
+                                    <option value="Mudanza o Flete a Provincia">Mudanza o Flete a Provincia</option>
+                                    <option value="Carga Comercial / Fletes Generales">Carga Comercial o Fletes Generales</option>
+                                    <option value="Otro tipo de servicio">Otro servicio</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="detalles" class="block text-sm font-bold text-navy-900 mb-2">Detalle breve (Opcional)</label>
+                            <input type="text" id="detalles" placeholder="Ej. Sala, 2 camas, cajas..." class="w-full px-4 py-3.5 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-royal-600 focus:bg-white focus:outline-none text-slate-800 text-sm transition-all">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-whatsapp-500 hover:bg-whatsapp-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 text-base">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Enviar Datos y Cotizar por WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-royal-600 text-white p-2.5 rounded-xl">
+                            <i class="fa-solid fa-truck-fast text-xl"></i>
+                        </div>
+                        <span class="font-extrabold text-lg tracking-tight">MUDANZAS Y FLETES LIMA & PROVINCIAS</span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-sm leading-relaxed mb-6">
+                        Servicio profesional de mudanzas, carga y fletes locales y nacionales con unidades propias y atención directa sin intermediarios.
+                    </p>
+                    <div class="flex items-center gap-4 text-slate-300">
+                        <a href="https://wa.me/51952258542" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 hover:bg-whatsapp-500 rounded-full flex items-center justify-center transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-royal-600 rounded-full flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-royal-600 rounded-full flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
                 <div>
-                    <h4>Cero intermediarios:</h4>
-                    <p>Tratas directamente con el equipo.</p>
+                    <h4 class="font-bold text-white text-base mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-white transition-colors">Quiénes Somos</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Nuestros Servicios</a></li>
+                        <li><a href="#provincias" class="hover:text-white transition-colors">Rutas a Provincias</a></li>
+                        <li><a href="#cotizador" class="hover:text-white transition-colors">Cotización Rápida</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-clock"></i>
+
                 <div>
-                    <h4>Puntualidad garantizada:</h4>
-                    <p>Respetamos los horarios.</p>
+                    <h4 class="font-bold text-white text-base mb-4">Contacto Directo</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-royal-600"></i>
+                            <span>+51 952258542</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-royal-600"></i>
+                            <span>contacto@mudanzasfletes.com</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-location-dot text-royal-600"></i>
+                            <span>Lima Metropolitana, Perú</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-box-open"></i>
-                <div>
-                    <h4>Cuidado extremo:</h4>
-                    <p>Manipulación cuidadosa de toda la carga.</p>
-                </div>
+
+            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Mudanzas y Fletes Lima & Provincias. Todos los derechos reservados.</p>
             </div>
         </div>
-    </section>
-
-    <!-- SECCIÓN SERVICIOS -->
-    <section id="servicios" class="services-section">
-        <h2 class="section-title">NUESTROS SERVICIOS: Soluciones a tu Medida</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-house"></i></div>
-                <h3>1. Mudanzas Locales (Lima y Callao)</h3>
-                <p>Ideal para departamentos, casas y oficinas dentro de la ciudad. Nuestro equipo gestiona el traslado con agilidad y cuidado.</p>
-                <p class="service-note"><strong>Unidad sugerida:</strong> Camión mediano o mediano-grande, perfecto para calles y avenidas de la ciudad.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-road"></i></div>
-                <h3>2. Fletes a Provincia (Viajes Nacionales)</h3>
-                <p>Para traslados de carga pesada, mudanzas completas o envíos hacia el interior del país. Garantía de seguridad en carretera.</p>
-                <p class="service-note"><strong>Unidad sugerida:</strong> Camión grande, preparado para viajes largos y optimización de espacio.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                <h3>3. Carga Comercial y Fletes Generales</h3>
-                <p>Soluciones para empresas, tiendas y distribución de mercancía. Trasladamos pallets, muebles y bultos pesados con puntualidad.</p>
-                <p class="service-note"><strong>Beneficio:</strong> Cuidado estricto de tu carga comercial de puerta a puerta.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN PROVINCIAS -->
-    <section id="provincias" class="provinces-section">
-        <h2 class="section-title">Fletes y Mudanzas a Toda la Costa y Provincias</h2>
-        <p class="section-subtitle">Traslados seguros en carretera con nuestra unidad grande, optimizada para proteger tu carga de puerta a puerta hacia cualquier destino del Perú.</p>
-        
-        <div class="provinces-grid">
-            <div class="province-card">
-                <i class="fa-solid fa-route"></i>
-                <h3>Rutas Frecuentes</h3>
-                <p>Realizamos viajes constantes y seguros por toda la costa, llegando de forma directa a <strong>Trujillo, Chiclayo, Piura, Lurín</strong>, y principales ciudades.</p>
-            </div>
-            <div class="province-card">
-                <i class="fa-solid fa-mountain-sun"></i>
-                <h3>¿Llegas más lejos?</h3>
-                <p>¡Sí! Si cotizas con anticipación, <strong>llegamos a cualquier destino del país, incluyendo la sierra y la selva</strong>.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN COTIZACIÓN RÁPIDA (CON ORIGEN, DESTINO Y BREVE DESCRIPCIÓN) -->
-    <section class="quote-section">
-        <h2>COTIZACIÓN RÁPIDA</h2>
-        <p class="quote-subtitle">Indícanos los detalles y te responderemos al instante por WhatsApp</p>
-        <div class="quote-form">
-            <div class="form-group">
-                <label for="origen">Origen:</label>
-                <input type="text" id="origen" placeholder="Ej. San Juan de Lurigancho">
-            </div>
-            <div class="form-group">
-                <label for="destino">Destino:</label>
-                <input type="text" id="destino" placeholder="Ej. Trujillo o Lima Cercado">
-            </div>
-            <div class="form-group full-width">
-                <label for="descripcion">Breve descripción de la carga o mudanza:</label>
-                <input type="text" id="descripcion" placeholder="Ej. Mudanza de departamento de 2 cuartos / Caja de muebles">
-            </div>
-        </div>
-        <button id="btnEnviarWhatsApp" class="btn-quote">
-            <i class="fa-brands fa-whatsapp"></i> ENVIAR DATOS A WHATSAPP
-        </button>
-    </section>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="footer">
-        <p>Mudanzas y Fletes Joaquín[cite: 1, 2, 3] | Teléfono/WhatsApp: 952258542 | Lima, Perú | Todos los derechos reservados</p>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/51952258542?text=Hola,%20deseo%20información%20sobre%20sus%20servicios%20en%20Mudanzas%20y%20Fletes%20Joaquín" target="_blank" class="floating-whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/51952258542?text=Hola,%20deseo%20cotizar%20un%20servicio." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-whatsapp-500 hover:bg-whatsapp-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" aria-label="WhatsApp de contacto">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- Enlace al archivo de JavaScript externo -->
-    <script src="script.js"></script>
+    <!-- Script for mobile menu toggle and WhatsApp form generator -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp interactive quotation form handler
+        const form = document.getElementById('whatsapp-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const origen = document.getElementById('origen').value.trim();
+            const destino = document.getElementById('destino').value.trim();
+            const tipoCarga = document.getElementById('tipo-carga').value;
+            const detalles = document.getElementById('detalles').value.trim();
+
+            let message = `Hola, deseo cotizar el siguiente servicio:%0A%0A`;
+            message += `*📍 Origen:* ${origen}%0A`;
+            message += `*🏁 Destino:* ${destino}%0A`;
+            message += `*📦 Tipo:* ${tipoCarga}%0A`;
+            if(detalles) {
+                message += `*📝 Detalles:* ${detalles}%0A`;
+            }
+            message += `%0A¿Podría brindarme una cotización por favor?`;
+
+            const whatsappNumber = '51952258542';
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
 </body>
 </html>
