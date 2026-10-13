@@ -1,0 +1,458 @@
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* CABECERA */
+.header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0b3c5d;
+    font-size: 1rem;
+}
+
+.logo-icon {
+    font-size: 1.6rem;
+    color: #1d63b8;
+}
+
+.logo-text strong {
+    color: #1d63b8;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #1d63b8;
+}
+
+.btn-header-whatsapp {
+    background-color: #0b3c5d;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.btn-header-whatsapp:hover {
+    background-color: #1d63b8;
+}
+
+/* HERO SECTION (INICIO) */
+.hero-section {
+    position: relative;
+    background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn-main-whatsapp {
+    background-color: #25d366;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-main-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+}
+
+/* SECCIONES COMUNES */
+section {
+    padding: 70px 50px;
+}
+
+.section-title {
+    text-align: center;
+    color: #0b3c5d;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.05rem;
+}
+
+/* QUIÉNES SOMOS */
+.about-section {
+    background-color: #ffffff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.team-placeholder {
+    background: linear-gradient(135deg, #0b3c5d, #1d63b8);
+    height: 280px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(11, 60, 93, 0.2);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.team-placeholder i {
+    font-size: 3.5rem;
+}
+
+.team-placeholder span {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.about-text {
+    flex: 1.2;
+}
+
+.about-text h3 {
+    color: #0b3c5d;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.about-features {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    border-left: 4px solid #1d63b8;
+}
+
+.feature-item i {
+    font-size: 1.8rem;
+    color: #1d63b8;
+}
+
+.feature-item h4 {
+    color: #0b3c5d;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* SERVICIOS */
+.services-section {
+    background-color: #f0f4f8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-top: 5px solid #0b3c5d;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 2.2rem;
+    color: #1d63b8;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #0b3c5d;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.service-note {
+    font-size: 0.85rem !important;
+    color: #444 !important;
+    background: #eef2f7;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* PROVINCIAS */
+.provinces-section {
+    background-color: white;
+}
+
+.provinces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.province-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e1e8ed;
+    text-align: center;
+}
+
+.province-card i {
+    font-size: 2.5rem;
+    color: #1d63b8;
+    margin-bottom: 15px;
+}
+
+.province-card h3 {
+    color: #0b3c5d;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.province-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* COTIZACIÓN RÁPIDA */
+.quote-section {
+    background: linear-gradient(135deg, #0b3c5d, #162447);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.quote-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.quote-subtitle {
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.quote-form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 750px;
+    margin: 0 auto 25px auto;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    min-width: 320px;
+}
+
+.form-group.full-width {
+    flex: 100%;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.btn-quote {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-quote:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+}
+
+/* PIE DE PÁGINA */
+.footer {
+    background-color: #07253a;
+    color: #adb5bd;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* BOTÓN FLOTANTE WHATSAPP */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.3s;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* RESPONSIVO PARA MÓVILES */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .about-container {
+        flex-direction: column;
+    }
+    .about-features {
+        flex-direction: column;
+    }
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    .form-group {
+        min-width: 100%;
+    }
+}
